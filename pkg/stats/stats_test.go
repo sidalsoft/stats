@@ -76,14 +76,14 @@ import (
 
 func TestCategoriesTotal(t *testing.T) {
 	payments := []types.Payment{
-		{ID: 1, Category: "auto", Amount: 1_000_00},
+		{ID: 1, Category: "auto", Amount: 10},
 		{ID: 2, Category: "food", Amount: 2_000_00},
-		{ID: 3, Category: "auto", Amount: 3_000_00},
-		{ID: 4, Category: "auto", Amount: 4_000_00},
+		{ID: 3, Category: "auto", Amount: 5},
+		{ID: 4, Category: "auto", Amount: 6},
 		{ID: 5, Category: "fun", Amount: 5_000_00},
 	}
 	expected := map[types.Category]types.Money{
-		"auto": 8_000_00,
+		"auto": 7,
 		"food": 2_000_00,
 		"fun":  5_000_00,
 	}
