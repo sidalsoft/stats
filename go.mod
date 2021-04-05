@@ -1,4 +1,4 @@
-module github.com/sidalsoft/stats/v2
+module github.com/sidalsoft/stats
 
 go 1.16
 
