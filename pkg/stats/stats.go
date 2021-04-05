@@ -5,6 +5,9 @@ import "github.com/sidalsoft/bank/v2/pkg/types"
 func Avg(payments []types.Payment) types.Money {
 	sum := types.Money(0)
 	for _, p := range payments {
+		if p.Status == types.StatusFail {
+			continue
+		}
 		sum += p.Amount
 	}
 	return sum / types.Money(len(payments))
@@ -13,6 +16,9 @@ func Avg(payments []types.Payment) types.Money {
 func TotalInCategory(payments []types.Payment, category types.Category) types.Money {
 	sum := types.Money(0)
 	for _, p := range payments {
+		if p.Status == types.StatusFail {
+			continue
+		}
 		if p.Category != category {
 			continue
 		}
