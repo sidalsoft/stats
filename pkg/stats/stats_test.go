@@ -99,8 +99,8 @@ func TestPeriodsDynamic(t *testing.T) {
 	second := map[types.Category]types.Money{"auto": 20, "food": 3_000_00}
 
 	expected := map[types.Category]types.Money{
-		"auto": -10,
-		"food": 2_000_00,
+		"auto": 10,
+		"food": -2_000_00,
 	}
 	result := PeriodsDynamic(first, second)
 	if !reflect.DeepEqual(expected, result) {
